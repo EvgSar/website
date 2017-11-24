@@ -1,10 +1,10 @@
 ﻿@model AutoPark.Models.Marka
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Создание";
 }
 
-<h2>Create</h2>
+<h2>Добавление автомобиля</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -15,7 +15,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.NameMarka, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NameMarka, "Название автомобиля", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NameMarka, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NameMarka, "", new { @class = "text-danger" })

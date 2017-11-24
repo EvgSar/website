@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "Авторы";
 }
-<h2>Список авторов</h2>
+<h2>Список автомобилей</h2>
 <br />
 <p>
     <a href=@Url.Action("Create", "Authors") class="button">Добавить автомобиль</a>
 </p>
+
 <style>
     a.button {
         font-weight: 700;
@@ -28,14 +29,15 @@
             box-shadow: 0 3px rgb(33,147,90) inset;
         }
 </style>
+<link href="~/Content/Site.css" rel="stylesheet" />
 
 <table class="table" >
     <tr>
         <th style="color: #ffffff">
-            Имя автора
+            Название автомобиля
         </th>
         <th style="color: #ffffff">
-            Года жизни
+            Год производства
         </th>
         <th></th>
     </tr>
