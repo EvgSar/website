@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AutoPark.Models.Marka>
+
+@{
+    ViewBag.Title = "Автомобили";
+}
+
+<h2>Список автомобиль</h2>
+
+<p>
+    <a href=@Url.Action("Create", "Authors") class="button">Добавить автомобиль</a>
+</p>
+<table class="table">
+    <tr>
+        <th style="color: #ffffff">
+            @Html.DisplayNameFor(model => model.Model.Name)*
+            Название автомобиля
+        </th>
+        <th style="color: #ffffff">
+            Год выпуска
+            @Html.DisplayNameFor(model => model.NameMarka)*
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameMarka)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

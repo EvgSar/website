@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AutoPark.Models.Model>
+
+@{
+    ViewBag.Title = "Авторы";
+}
+<h2>Список авторов</h2>
+<br />
+<p>
+    <a href=@Url.Action("Create", "Authors") class="button">Добавить автомобиль</a>
+</p>
+<style>
+    a.button {
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        padding: .8em 1em calc(.8em + 3px);
+        border-radius: 3px;
+        background: rgb(64,199,129);
+        box-shadow: 0 -3px rgb(53,167,110) inset;
+        transition: 0.2s;
+    }
+        a.button:hover {
+            background: rgb(53, 167, 110);
+        }
+
+        a.button:active {
+            background: rgb(33,147,90);
+            box-shadow: 0 3px rgb(33,147,90) inset;
+        }
+</style>
+
+<table class="table" >
+    <tr>
+        <th style="color: #ffffff">
+            Имя автора
+        </th>
+        <th style="color: #ffffff">
+            Года жизни
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
